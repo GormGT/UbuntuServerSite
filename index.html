@@ -3,18 +3,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleSheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Gubuntu.net</title>
 </head>
-<body>
-    <h1>Welcome to Gubuntu.net!</h1>
+<body class="bg-light">
+    <header class="text-center">
+        <div class="container topHeader m-0 p-5 text-white">
+            <h1>Welcome to Gubuntu.net!</h1>
 
-    <h2>Here you can learn how to host your own website, just like this one.</h2>
-
-    <div>
-        
+        </div>
+    </header>
+    <div class="text-center">
+        <div class="container orangLine p-4 m-0 text-white">
+            <h2>Here you can learn how to host your own website, just like this one.</h2>
+        </div>
     </div>
 
+    <div class="container-fluid row mainCont m-0 pt-4 p-0">
+        <div class="navCol bg-light col-3">
+            <div class="container">
+                <a href="#chap1" class=" text-dark navText">Kapittel 1: Sett opp maskin</a>
+            </div>
+        </div>
+        <div class="mainPage col-9 bg-white">
+            <div class="container" id="chap1">
+                <h2>Kapittel 1</h2>
+                <h3>Sette opp en virtuell maskin.</h3>
+            </div>
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
