@@ -1,6 +1,7 @@
 .topHeader {
     background-image: linear-gradient(180deg, orange, purple);
     max-width: 100% !important;
+    padding: 100px;
 }
 .orangLine {
     background-image: linear-gradient(180deg, orange, orangered);
