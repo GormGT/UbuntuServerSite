@@ -16,3 +16,35 @@
 .navText:hover {
     text-decoration-line: underline;
 }
+h2.chapH {
+    padding-top: 20px;
+}
+p {
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+img {
+    border-style:groove;
+}
+.codeP {
+    padding-bottom: 10px;
+}
+.lightCode {
+    background-color: gainsboro;
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+.darkCode {
+    background-color: rgb(21, 21, 21);
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: white;
+}

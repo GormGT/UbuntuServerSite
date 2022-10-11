@@ -10,41 +10,146 @@
 <body class="bg-light">
     <header class="text-center">
         <div class="container topHeader m-0 text-white">
-            <h1>Welcome to Gubuntu.net!</h1>
+            <h1>Velkommen til Gubuntu.net!</h1>
 
         </div>
     </header>
     <div class="text-center">
         <div class="container orangLine p-4 m-0 text-white">
-            <h2>Here you can learn how to host your own website, just like this one.</h2>
+            <h2>Her kan du lære hvordan du kan hoste din egen nettside, akkurat som denne.</h2>
         </div>
     </div>
 
     <div class="container-fluid row mainCont m-0 pt-4 p-0">
-        <div class="navCol bg-light col-3">
+        <div class="navCol bg-light col-2">
             <div class="container border-4 border-bottom p-2">
                 <a href="#chap1" class=" text-dark navText">Kapittel 1: Sett opp maskin</a>
             </div>
             <div class="container border-4 border-bottom p-2">
-                <a href="#chap2" class=" text-dark navText">Kapittel 2: Sett opp Apache</a>
+                <a href="#chap2" class=" text-dark navText">Kapittel 2: Konfigurere webserver</a>
             </div>
             <div class="container border-4 border-bottom p-2">
-                <a href="#chap3" class="text-dark navText">Kapittel 3: Legg inn egen HTML</a>
+                <a href="#chap3" class=" text-dark navText">Kapittel 3: Sett opp Apache</a>
+            </div>
+            <div class="container border-4 border-bottom p-2">
+                <a href="#chap4" class="text-dark navText">Kapittel 4: Legg inn egen HTML</a>
             </div>
         </div>
-        <div class="mainPage col-9 bg-white">
+        <div class="mainPage col-10 bg-white">
             <div class="container" id="chap1">
-                <h2>Kapittel 1</h2>
-                <h3>Sette opp en virtuell maskin.</h3>
-                <p></p>
+                <h2 class="chapH">Kapittel 1</h2>
+                <h3>Sette opp en virtuell maskin.</h3> 
+                <br>               
+                <img src="img/1CreateNew.png" alt="Bilde menyen til venstre" width="400px">
+                <p>Aller først må vi opprette serveren vi skal hoste nettsiden vår på. Naviger fram til ditt elevpool i menyen til venstre (i dette tilfellet elevpool 31), høyreklikk og velg "New virtual machine".</p>                
+                <br>
+                <img src="img/12CreateNew.png" alt="Velg create a new virtual machine" width="500px"><img src="img/13Name.png" alt="Gi maskinen et passende navn og velg en mappe den skal lagres i" width="500px">
+                <p>I denne nye menyen vil det være 7 steg man må gjennom for å opprette en ny maskin. Det første steget er å velge hvordan man vil opprette maskinen, og ettersom vi oppretter den fra bunnen av, velger vi bare "Create a new virtual machine". Så må vi gi maskinen et navn, og et sted den skal lagres. Jeg har gitt den navnet "TutorialUbuntuMachine". Mappen som den lagres i lot jeg være slik den er.</p>
+                <img src="img/14Pool.png" alt="Velg ditt elevpool fra listen" width="400px"><img src="img/15Storage.png" alt="Velg en storage policy fra listen, i vårt tilfelle er der IKT-fag" width="500px">
+                <p>Så må vi velge en "compute resource", og her ligger en liste over de forskjellige elevpool-nummerne. Velg ditt elevpool fra listen (i dette tilfellet 31), og trykk "next". På steg 4 velger vi stedet der vi skal lagre filene til den virtuelle maskinen. I vårt tilfelle velger vi "IKT-fag".</p>
+                <img src="img/16Compat.png" alt="Velg ESXi 6.7 hvis det ikke er valgt allerede" width="500px"><img src="img/17OS.png" alt="Velg Linux og Ubuntu fra menyen" width="500px">
+                <p>På "Select compatibility" velger vi "ESXi 6.7 and later", som er standardinnstillingen. Etter dette skal man velge operativsystemet, og her må man først velge Linux i den øverste menyen, og så navigere fram til "Ubuntu Linux (64-bit)".</p>
+                <img src="img/18HardwareNetwork.png" alt="Gå ned til New network og velg browse fra menyen markert i rødt" width="600px"><img src="img/181HardwareNetwork.png" alt="Velg ditt elevpoolnummer fra listen" width="500px">
+                <p>Etter å ha valgt operativsystem vil du komme til "Customize hardware", og her er det en del som må justeres. Aller først går vi til "New network", og velger "Browse" fra menyen markert i rødt. I menyen som da kommer opp, velger man sitt elevpool-nummer og trykker ok.</p>
+                <img src="img/182ContentLibrary.png" alt="Ved New CD/DVD drive, velg content library ISO file" width="600px"><img src="img/183ContentLibrary.png" alt="Velg Ubuntu helt øverst på listen" width="550px">
+                <p>Så går man til "New CD/DVD drive" og velger "Content library ISO file" fra listen. I listen som kommer opp vil det være mange forskjellige muligheter, men ettersom vi skal opprette en Ubuntu webserver velger vi "ubuntu-20.04.3-live-server" som ligger øverst. Når man har gjort det, pass på at du krysser av på "Connect at power on".</p>
+                <img src="img/184Thin.png" alt="Velg thin provision i disk provisioning under new hard disk menyen" width="700px">
+                <p>Neste steg er i "New hard disk" menyen. I "Disk provisioning" menyen må vi velge "Thin provision". Dette vil hindre den virtuelle maskinen fra å bruke for mange ressurser.</p>
+                <img src="img/185Ready.png" alt="Slik skal skjermen se ut" width="700px">
+                <p>Når du har fullført alle stegene over og trykket "Finish", så vil du kunne finne maskinen liggende under ditt elevpool.</p>
+
+
             </div>
+            <hr>
             <div class="container" id="chap2">
-                <h2>Kapittel 2</h2>
-                <h3>Installere Apache</h3>
-                <p></p>
+                <h2 class="chapH">Kapittel 2</h2>
+                <h3>Konfigurering av Ubuntu webserver</h3>
+                <br>
+                <div>
+                    <img src="img/185Ready.png" alt="trykk på den grønne pilen for å starte maskinen" width="700px">    
+                    <p>Før vi gjør noe annet må vi starte opp selve maskinen ved å trykke på den grønne pilen til høyre for navnet på maskinen. Man kan også høyreklikke på maskinen og gå til power - power on.</p>
+                </div>
+                <div>
+                    <img src="img/200Launch.png" alt="Trykk på launch web console" width="700px">    
+                    <p>Nå som vi har started maskinen vil teksten "Launch web console" bli synlig. Trykk på den, og velg "Web console" i menyen som popper opp, og trykk ok.</p>
+                </div>
+                <div>
+                    <img src="img/201Lang.png" alt="Velg et språk fra listen" width="700px">    
+                    <p>Det aller første vi ser når vi har åpnet web konsollen er en meny som spør om å velge et språk. Her valgte jeg engelsk, men man kan velge norsk hvis man vil. Vær obs på at man kanskje må trykke på skjermen med musen for at den skal la deg gjøre noe.</p>
+                </div>
+                <div>
+                    <img src="img/202Keyboard.png" alt="Velg et tastatur" width="700px">    
+                    <p>Etter å ha valgt språk spør maskinen om språket til tastaturet. Her kan du enten velge manuelt fra listen, eller trykke på "Identify keyboard". Hvis du velger den vil maskinen spørre deg om å trykke på forskjellige knapper på tastaturet, helt til den finner ut hvilke knapper du har og ikke har.</p>
+                </div>
+                <div>
+                    <img src="img/203Network.png" alt="Velg ens160 øverst på skjermen" width="700px"><img src="img/204Network.png" alt="Velg edit ipv4" width="600px"> 
+                    <p>Neste steg er å koble til internett. Start ved å velge der det står "ens160", og trykk enter for å få opp en liste. Velg "Edit IPv4" fra listen.</p>
+                </div>
+                <div>
+                    <img src="img/205NetworkMan.png" alt="Velg manual fra listen" width="700px">    
+                    <p>Etter å ha valgt IPv4 vil man få dette popup-vinduet. Trykk enter på menyen og velg "manual", ettersom vi må manuelt koble til internett.</p>
+                </div>
+                <div>
+                    <img src="img/206NetworkIP.png" alt="Her er feltene du skal skrive inn IP-informasjon" width="600px"><img src="img/207NetworkIPFilled.png" alt="Slik skal det se ut når Ip-ene er fylt ut" width="600px"> 
+                    <p class="codeP">I disse feltene skal man skrive inn IP addresse, Gateway, Subnett og DNS server. Search domains forblir tom.<br>Skriv følgende inn i feltene:</p>
+                    <p class="lightCode">Subnet: 10.12.elevpoolnummer.0/24<br>Address: 10.12.elevpoolnummer.69<br>Gateway: 10.12.elevpoolnummer.1<br>Name servers: 10.10.1.30</p>
+                    <p>Vær obs på at hvis du har flere webservere må du ha et annet tall i slutten av "Address".<br>Når du er ferdig med å skrive inn IP-ene, trykk på save, og så trykk på "done" for å gå videre.</p>
+                </div>
+                <div>    
+                    <p>Nå vil det være en del steg som vi skal hoppe over fordi vi ikke har bruk for dem. Den aller første av disse er når maskinen spør om du vil konfigurere proxy. Ikke skriv noe inn i feltet øverst, bare trykk på done.<br>Like etter spør maskinen om å konfigurere archive mirror. Dette trenger vi heller ikke gjøre noe med, så vi går bare videre.</p>
+                </div>
+                <div>
+                    <img src="img/211Continue.png" alt="Meny der maskinen spør om du vil oppdatere" width="700px">    
+                    <p>Så vil maskinen spørre om du vil oppdatere. Man kan velge og oppdatere hvis man vil, men ettersom denne guiden ble laget uten å gjøre det kan det føre til uforventede problemer.</p>
+                </div>
+                <div>
+                    <img src="img/212Storage.png" alt="Meny med valg for storage" width="700px">    
+                    <p>Når maskinen spør om å konfigurere storage layout, går man bare videre.</p>
+                </div>
+                <div>
+                    <img src="img/213Destructive.png" alt="Popup om destructive action" width="700px">    
+                    <p>Ved å gå videre etter storage layout vil maskinen spørre om å bekrefte en "destructive action". Hvis man har fulgt alle stegene så langt så vil ikke dette være noe problem, men det kan være lurt å dobbeltskjekke at man har satt opp alt som det skal.</p>
+                </div>
+                <div>
+                    <img src="img/214Profile.png" alt="menyen der du skriver inn profilinformasjon" width="600px"><img src="img/215ProfileFilled.png" alt="Ferdig utfylt profil" width="600px">    
+                    <p>Neste steg er å opprette en bruker på webserveren. Her skriver man inn navn, navn på webserveren, brukernavn og passord. Her kan man skrive inn hva man vil i de forskjellige feltene, bare pass på at du husker det du skriver inn som brukernavn og passord, ettersom de vil bli brukt til å bekrefte visse handlinger senere.</p>
+                </div>
+                <div>
+                    <img src="img/216SSH.png" alt="Meny for valg av SSH" width="700px">    
+                    <p>Så vil maskinen spørre om du vil bruke SSH. Sammenlignet med mange av de andre stegene som vi hoppet over tidligere, så er SSH noe vi skal ha. Huk av på "Install OpenSSH server", og gå videre.</p>
+                </div>
+                <div>
+                    <img src="img/217Ignoresnaps.png" alt="Stor meny med såkalte snaps" width="700px">    
+                    <p>Etter dette vil man få en meny fylt med mange forskjellige verktøy til webservere. Vi skal ikke bruke noen av disse, så bare trykk "done" for å gå videre.</p>
+                </div>
+                <div>
+                    <img src="img/218Loading.png" alt="konsoll som blir klargjort" width="700px">    
+                    <p>Maskinen vil nå begynne å installere diverse systemer. Dette er det siste steget før maskinen er ferdig satt opp. Konsollen vil kjøre for fullt, og dette kan fort ta rundt 13 minutter. Når den er ferdig vil det komme en "reboot now" knapp nederst, som vil ferdigstille oppsettet av maskinen.</p>
+                </div>
+                <div>
+                    <img src="img/220Restart.png" alt="Melding som kommer ved restart av konsollen" width="700px">    
+                    <p>Etter å ha startet på nytt vil man få dette vinduet, som snakker om å fjerne et såkalt "installation medium". Ettersom dette er en virtuell maskin og ikke en maskin som er satt opp gjennom en disk, kan vi bare ignorere dette og trykke enter.</p>
+                </div>
+                <div>
+                    <img src="img/222Login.png" alt="felt for innlogging" width="700px">    
+                    <p>Konsollen vil nå bli fylt med mange forskjellige kommandoer. Dette er maskinen som starter. Når den har startet helt, vil man bli spurt om å logge inn. På login skriver du inn brukernavnet og passordet du definerte tidligere. Vær obs på at det ikke vil være noen visuell indikasjon på at man skriver inn passorded, så her må man være sikker på at man skriver passordet riktig. Når man har skrevet inn alt trykker man enter.</p>
+                </div>
+                <div>
+                    <img src="img/223Ready.png" alt="Menyen som vises når man har logget inn" width="700px">    
+                    <p>Hvis du har skrevet inn riktig brukernavn og passord, vil du få denne skjermen. Gratulerer, du har nå satt opp en webserver!</p>
+                </div>
             </div>
+            <hr>
             <div class="container" id="chap3">
-                <h2>Kapittel 3</h2>
+                <h2 class="chapH">Kapittel 3</h2>
+                <h3>Installere Apache</h3>
+                <div>    
+                    <p>Først må vi oppdatere systemet for å få den nyeste versjonen av Apache 2. Skriv </p>
+                </div>
+            </div>
+            <hr>
+            <div class="container" id="chap4">
+                <h2 class="chapH">Kapittel 4</h2>
                 <h3>Legge inn egen HTML</h3>
                 <p></p>
             </div>
