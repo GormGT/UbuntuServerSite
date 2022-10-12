@@ -174,7 +174,16 @@
                     <!--Insert image of what to expect here, and potentially some comments. Maybe include the way you can see the server itself.-->
                 </div>
                 <div>
-                    <p>Nå er det på tide å sette opp filsystemet for serveren, slik at vi kan legge inn vår egen nettside. I denne guiden kommer jeg til å opprette siden "TestBuntu.net", men du må bytte ut "TestBuntu.net" med ditt eget domenenavn.</p> 
+                    <p>Nå er det på tide å sette opp filsystemet for serveren, slik at vi kan legge inn vår egen nettside. I denne guiden kommer jeg til å opprette siden "testbuntu.net", men du må bytte ut "testbuntu.net" med ditt eget domenenavn.</p>
+                    <p>Først må vi lage mappen som nettsiden skal lagres i ved å skrive inn følgende kommando:</p>
+                    <p class="darkCode">$ sudo mkdir -p /var/www/testbuntu.net/html</p>
+                    <p style="padding-top: 10px;">(Bytt ut testbuntu.net med ditt eget domenenavn)</p>
+                </div>
+                <div>
+                    <p>Så må vi endre plasseringen på mappen:</p>
+                    <p class="darkCode">$ sudo chown -R $USER:$USER /var/www/testbuntu.net/html</p>
+                    <p style="padding-top: 10px;">Etter dette må vi gi mappen nødvendige tilganger:</p>
+                    <p class="darkCode">$ sudo chmod -R 755 /var/www/testbuntu.net</p>
                 </div>
             </div>
             <hr>
