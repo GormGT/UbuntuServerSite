@@ -144,7 +144,37 @@
                 <h2 class="chapH">Kapittel 3</h2>
                 <h3>Installere Apache</h3>
                 <div>    
-                    <p>Først må vi oppdatere systemet for å få den nyeste versjonen av Apache 2. Skriv </p>
+                    <p>Først må vi oppdatere systemet for å få den nyeste versjonen av Apache 2. Skriv inn følgende:</p>
+                    <p class="darkCode">$ sudo apt update</p>
+                    <p style="padding-top: 10px;">Vær obs på at hver gang en av kommandoene inneholder "sudo", må du skrive inn passordet ditt.</p>
+                </div>
+                <div>
+                    <p>Så skal vi installere Apache. Skriv inn følgende kommando:</p>
+                    <p class="darkCode">$ sudo apt install apache2</p>
+                    <p style="padding-top: 10px;">Systemet vil så spørre om du er sikker på om du vil installere Apache. Trykk på "y" for å gå videre.</p>
+                </div>
+                <div>
+                    <p>Etter å ha ferdiginstallert Apache 2 kan man sjekke versjonen med:</p>
+                    <p class="darkCode">$ apache2 -version</p>
+                </div>
+                <div>
+                    <p>For at vi skal kunne nå Apache 2 utenifra må vi finne ut hvilke systemer vi må gi tilgang til brannmuren. Skriv inn følgende:</p>
+                    <p class="darkCode">$ sudo ufw app list</p>
+                    <!--Add an image here or something-->
+                </div>
+                <div>
+                    <p>Vi skal gi tilgang til det øverste punktet på listen som kommer opp, "Apache".</p>
+                    <p class="darkCode">$ sudo ufw allow 'Apache'</p>
+                    <p style="padding-top: 10px;">Sjekk så at Apache har tilgang til brannmuren.</p>
+                    <p class="darkCode">$ sudo ufw status</p>
+                </div>
+                <div>
+                    <p>Neste steg er å sjekke om Apache fungerer. Skriv inn følgende:</p>
+                    <p class="darkCode">$ sudo systemctl status apache2</p>
+                    <!--Insert image of what to expect here, and potentially some comments. Maybe include the way you can see the server itself.-->
+                </div>
+                <div>
+                    <p>Nå er det på tide å sette opp filsystemet for serveren, slik at vi kan legge inn vår egen nettside. I denne guiden kommer jeg til å opprette siden "TestBuntu.net", men du må bytte ut "TestBuntu.net" med ditt eget domenenavn.</p> 
                 </div>
             </div>
             <hr>
