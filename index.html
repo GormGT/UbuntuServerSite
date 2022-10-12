@@ -185,6 +185,39 @@
                     <p style="padding-top: 10px;">Etter dette må vi gi mappen nødvendige tilganger:</p>
                     <p class="darkCode">$ sudo chmod -R 755 /var/www/testbuntu.net</p>
                 </div>
+                <div><!--Maybe include a way to open the page itself through the IP adress between these points-->
+                    <p>Etter å ha installert Apache og satt opp en mappe for nettsiden å ligge, skal vi lage en midlertidig html-side for nettsiden. For å gjøre det enkelt skal vi bruke et innebygd tekstredigeringsprogram som heter nano, men man kan bruke andre program hvis man ønsker. Åpne nano med følgende:</p>
+                    <p class="darkCode">$ nano /var/www/testbuntu.net/html/index.html</p>
+                    <p>Skriv følgende inn i nano:</p>
+                    <p class="darkCode" style="text-align: left;">
+                        &lt;html&gt;<br>	
+                        &lt;head&gt;<br>
+                        &lt;title>testbuntu.net&lt;/title&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        &lt;h1>Velkommen til testbuntu.net!&lt;/h1&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;
+                    </p>
+                    <p style="padding-top: 10px;">Når du har skrevet alt inn trykk ctrl+O for å lagre og ctrl+X for å gå ut.</p>
+                </div>
+                <div>
+                    <p>Neste steg er å opprette en host-fil, som vil koble serveren sin IP til serveren sitt domenenavn. Skriv inn følgende for å opprette en host-fil og redigere den i nano:</p>
+                    <p class="darkCode">$ sudo nano /etc/apache2/sites-available/testbuntu.net.conf</p>
+                    <p>Skriv så inn det følgende i nano:</p>
+                    <p class="darkCode" style="text-align: left;">
+                        &lt;VirtualHost *:80&gt;<br>
+                        ServerAdmin admin@testbuntu.net<br>
+                        ServerName testbuntu.net<br>
+                        ServerAlias testbuntu.net<br>
+                        DocumentRoot /var/www/testbuntu.net/html<br>
+                        ErrorLog ${APACHE_LOG_DIR}/error.log<br>
+                        CustomLog ${APACHE_LOG_DIR}/access.log combined<br>
+                        &lt;/VirtualHost&gt;<br>
+                    </p>
+                    <p style="padding-top: 10px;">(Husk å bytte ut "testbuntu.net" med ditt domenenavn)</p>
+                    <p style="padding-top: 10px;">Trykk deretter ctrl+O og så ctrl+X for å lagre og gå ut.</p>
+                </div>
             </div>
             <hr>
             <div class="container" id="chap4">
