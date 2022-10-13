@@ -15,8 +15,14 @@
         </div>
     </header>
     <div class="text-center">
-        <div class="container orangLine p-4 m-0 text-white">
-            <h2>Her kan du lære hvordan du kan hoste din egen nettside, akkurat som denne.</h2>
+        <div class="container orangLine p-4 m-0 text-white row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h2>Her kan du lære hvordan du kan hoste din egen nettside, akkurat som denne.</h2>
+            </div>     
+            <div class="col-1">       
+                <img class="themeToggle" src="img/lightbulb-regular.svg" alt="Endre tema" onclick="themeChange()">
+            </div>
         </div>
     </div>
 
@@ -35,7 +41,7 @@
                 <a href="#chap4" class="text-dark navText">Kapittel 4: Legg inn egen HTML</a>
             </div>
         </div>
-        <div class="mainPage col-10 bg-white">
+        <div class="mainPage col-9 bg-white">
             <div class="container" id="chap1">
                 <h2 class="chapH">Kapittel 1</h2>
                 <h3>Sette opp en virtuell maskin.</h3> 
@@ -236,11 +242,22 @@
                 <h2 class="chapH">Kapittel 4</h2>
                 <h3>Legge inn egen HTML</h3>
                 <div>
-                    <p></p>
+                    <p>I teorien kan man bruke nano-editoren til å legge inn HTML, men ettersom nano-editoren er kort sagt primitiv, kommer vi til å lage en separat HTML fil som vi legger inn på webserveren gjennom programmet FileZilla. Før du lager selve HTML-filen til nettsiden du vil hoste på webserveren burde man lage en enkel HTML fil som bare inneholder litt tekst, slikt at man får testet at alt faktisk fungerer.</p>
+                </div>
+                <div>
+                    <p>Gå til *insert link til Filezilla her* og last ned FileZilla. Etter å ha gjennomgått installasjonsprosessen vil FileZilla være klar til å brukes.</p>
+                </div>
+                <div>
+                    <p>Pass på at webserveren din er skrudd på når du bruker FileZilla, ellers vil du ikke få tilgang til filene til webserveren.<br>
+                    Først må vi logge inn på FileZilla med webserverbrukeren. Trykk på "connect" øverst til høyre, og ...</p>
+                    <!--This part requires me to actually do it when I have Filezilla and the webserver available.-->
                 </div>
             </div>
         </div>
     </div>
+    <footer>
+        <!--Add something here to add some space to the bottom-->
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

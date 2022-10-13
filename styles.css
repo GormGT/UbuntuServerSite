@@ -40,7 +40,7 @@ img {
     text-align: center;
 }
 .darkCode {
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(24, 24, 24);
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -49,4 +49,32 @@ img {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     color: white;
+}
+
+/*Classes for the theme toggler*/
+.themeToggle {
+    max-width: 30px;
+    border-style: none !important;
+    filter: invert(100%);
+}
+.themeToggle:hover {
+    background: url("img/lightbulb-solid.svg");
+}
+.superDark {
+    background-color: black;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: white;
+}
+
+
+/*Experimental code, part of a system that allows the user to zoom in on images. A little unsure about this because what I've found so far requires code for each individual image, which is gonna be painful to add*/
+
+img:hover {
+    cursor: pointer;
 }
