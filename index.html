@@ -218,12 +218,26 @@
                     <p style="padding-top: 10px;">(Husk å bytte ut "testbuntu.net" med ditt domenenavn)</p>
                     <p style="padding-top: 10px;">Trykk deretter ctrl+O og så ctrl+X for å lagre og gå ut.</p>
                 </div>
+                <div>
+                    <p>Så må vi opprette en konfigurasjonsfil til host-filen. Skriv inn følgende:</p>
+                    <p class="darkCode">$ sudo a2ensite info.net.conf</p>
+                    <p style="padding-top: 10px;">Skru så av standard-host-filen med følgende:</p>
+                    <p class="darkCode">$ sudo a2dissite 000-default.conf</p>
+                    <p>Restart Apache for at for at endringene skal tre i kraft:</p>
+                    <p class="darkCode">$ sudo systemctl restart apache2</p>
+                </div>
+                <div>
+                    <!--Any problems that occur now will have to be tested on own web server, if they occur, make a section here.-->
+                    <p>Apache 2 er nå ferdigkonfigurert, og du kan skrive inn ip-addressen til webserveren i søkefeltet for å åpne nettsiden din.</p>
+                </div>
             </div>
             <hr>
             <div class="container" id="chap4">
                 <h2 class="chapH">Kapittel 4</h2>
                 <h3>Legge inn egen HTML</h3>
-                <p></p>
+                <div>
+                    <p></p>
+                </div>
             </div>
         </div>
     </div>
