@@ -25,7 +25,6 @@ p {
 }
 img {
     border-style:groove;
-    text-align: center;
 }
 .codeP {
     padding-bottom: 10px;
@@ -78,6 +77,26 @@ img.themeToggle:hover {
 hr {
     margin-top: 70px;
 }
+footer h6 {
+    margin: 0px;
+}
+h6 a{
+    text-decoration: none;
+}
+h6 a:hover{
+    text-decoration: underline;
+}
+.mobileNavCol{
+    display: none;
+}
+.backToTop{
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.backToTop:hover{
+    text-decoration: underline;
+}
 
 
 /*Experimental code, part of a system that allows the user to zoom in on images. A little unsure about this because what I've found so far requires code for each individual image, which is gonna be painful to add*/
@@ -85,3 +104,74 @@ hr {
 /*img:hover {
     cursor: pointer;
 }*/
+
+/*Media queries to make page more responsive*/
+
+@media screen and (max-width: 1020px){
+    img {
+        width: 500px;
+    }
+    img.img600{
+        width: 500px;
+    }
+    img.img550{
+        width: 500px;
+    }
+    img.img500{
+        width: 500px;
+    }
+    img.img400{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 750px){
+    img {
+        max-width: 100%;
+    }
+    img.img600{
+        max-width: 100%;
+    }
+    img.img550{
+        max-width: 100%;
+    }
+    img.img500{
+        max-width: 100%;
+    }
+    img.img400{
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .mobileNavCol {
+        display: inline-block;
+        white-space: nowrap;
+        width: 25%;
+    }
+    .navCol{
+        display: none;
+    }
+    .mainPage {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 1225px) {
+    .navCol a{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px){
+    .darkCode{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 740px){
+    .orangLine h2{
+        font-size: 18;
+    }
+    .orangLine p{
+        font-size: 9px;
+    }
+    .themeToggle{
+        width: 20px;
+    }
+}
