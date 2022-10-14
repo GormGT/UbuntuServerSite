@@ -29,6 +29,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="mobileNavCol bg-light col-2">
+                <!--Separate navbar for smaller screens-->
                 <div class="container border-4 border-bottom p-2">
                     <a href="#chap1" class=" text-dark navText">Kapittel 1: Sett opp maskin</a>
                 </div>
@@ -66,6 +67,7 @@
                     <p>Aller først må vi opprette serveren vi skal hoste nettsiden vår på. Naviger fram til ditt elevpool i menyen til venstre (i dette tilfellet elevpool 31), høyreklikk og velg "New virtual machine".</p>
                     <img class="img400" src="img/1CreateNew.png" alt="Bilde menyen til venstre" width="400px">                
                     <br>
+                    <!--Maybe convert into divs to improve code readability???-->
                     <p>I denne nye menyen vil det være 7 steg man må gjennom for å opprette en ny maskin. Det første steget er å velge hvordan man vil opprette maskinen, og ettersom vi oppretter den fra bunnen av, velger vi bare "Create a new virtual machine". Så må vi gi maskinen et navn, og et sted den skal lagres. Jeg har gitt den navnet "TutorialUbuntuMachine". Mappen som den lagres i lot jeg være slik den er.</p>
                     <img class="img500" src="img/12CreateNew.png" alt="Velg create a new virtual machine" width="500px"><img class="img500" src="img/13Name.png" alt="Gi maskinen et passende navn og velg en mappe den skal lagres i" width="500px">
                     <p>Så må vi velge en "compute resource", og her ligger en liste over de forskjellige elevpool-nummerne. Velg ditt elevpool fra listen (i dette tilfellet 31), og trykk "next". På steg 4 velger vi stedet der vi skal lagre filene til den virtuelle maskinen. I vårt tilfelle velger vi "IKT-fag".</p>
@@ -84,6 +86,7 @@
 
                 </div>
                 <hr>
+                <!--Used divs to separate parts for easier readability-->
                 <div class="container" id="chap2">
                     <h2 class="chapH">Kapittel 2</h2>
                     <h3>Konfigurering av Ubuntu webserver</h3>
@@ -183,7 +186,7 @@
                     <div>
                         <p>For at vi skal kunne nå Apache 2 utenifra må vi finne ut hvilke systemer vi må gi tilgang til brannmuren. Skriv inn følgende:</p>
                         <p class="darkCode">$ sudo ufw app list</p>
-                        <!--Add an image here or something-->
+                        <!--Maybe add an image here or something-->
                     </div>
                     <div>
                         <p>Vi skal gi tilgang til det øverste punktet på listen som kommer opp, "Apache".</p>
@@ -211,7 +214,7 @@
                         <p style="padding-top: 10px;">Etter dette må vi gi mappen nødvendige tilganger:</p>
                         <p class="darkCode">$ sudo chmod -R 755 /var/www/testbuntu.net</p>
                     </div>
-                    <div><!--Maybe include a way to open the page itself through the IP adress between these points-->
+                    <div>
                         <p>Etter å ha installert Apache og satt opp en mappe for nettsiden å ligge, skal vi lage en midlertidig html-side for nettsiden. For å gjøre det enkelt skal vi bruke et innebygd tekstredigeringsprogram som heter nano, men man kan bruke andre program hvis man ønsker. Åpne nano med følgende:</p>
                         <p class="darkCode">$ nano /var/www/testbuntu.net/html/index.html</p>
                         <p>Skriv følgende inn i nano:</p>
@@ -312,7 +315,7 @@
             <h6><a href="https://steamcommunity.com/profiles/76561198427341297/" target="_blank">Steam</a></h6>
         </div>
         <div class="row">
-            <h6 class="text-light">Email: adventuregamr@gmail.com</h6><!--Add something here to add some space to the bottom-->
+            <h6 class="text-light">Email: adventuregamr@gmail.com</h6>
         </div>
     </footer>
     <script src="index.js"></script>

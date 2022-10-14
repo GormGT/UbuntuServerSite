@@ -1,3 +1,4 @@
+//Define HTML elements as variables
 let mainPage = document.querySelector(".mainPage");
 let body = document.querySelector("body");
 let mainText = document.querySelectorAll("p");
@@ -10,6 +11,7 @@ let headerText = document.querySelectorAll(".chapH");
 let headerText2 = document.querySelectorAll("h3");
 let themeText = document.querySelector("p.themeText");
 
+//A one-time function fired upon first theme toggle to correct colors on headers used throughout website
 function giveHeadersLight(){
     for(i = 0; i < headerText.length; i++){
         headerText[i].classList.add("text-light");
@@ -19,9 +21,11 @@ function giveHeadersLight(){
     };
 }
 
+//Boolean variables for checking wether dark theme is enabled or not
 let themeCheck = true;
 let firstTime = false;
 
+//The main theme switch function
 function themeChange(){
     if (themeCheck == true){
         if (firstTime == false){
