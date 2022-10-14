@@ -25,6 +25,7 @@ p {
 }
 img {
     border-style:groove;
+    text-align: center;
 }
 .codeP {
     padding-bottom: 10px;
@@ -71,10 +72,16 @@ img {
     text-align: center;
     color: white;
 }
+img.themeToggle:hover {
+    cursor: pointer;
+}
+hr {
+    margin-top: 70px;
+}
 
 
 /*Experimental code, part of a system that allows the user to zoom in on images. A little unsure about this because what I've found so far requires code for each individual image, which is gonna be painful to add*/
 
-img:hover {
+/*img:hover {
     cursor: pointer;
-}
+}*/

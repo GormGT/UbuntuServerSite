@@ -177,7 +177,10 @@
                 <div>
                     <p>Neste steg er å sjekke om Apache fungerer. Skriv inn følgende:</p>
                     <p class="darkCode">$ sudo systemctl status apache2</p>
-                    <!--Insert image of what to expect here, and potentially some comments. Maybe include the way you can see the server itself.-->
+                    <p>Du kan også sjekke om siden fungerer ved å skrive inn:</p>
+                    <p class="darkCOde">$ hostname -I</p>
+                    <p style="padding-top: 10px;">Og så skrive inn "http://" etterfulgt av IP-adressen som kommer opp. Hvis alt fungerer, vil du få en meny som ligner på denne:</p>
+                    <img src="img/Apache2Page.png" alt="Apache 2 standardside" width="700px">
                 </div>
                 <div>
                     <p>Nå er det på tide å sette opp filsystemet for serveren, slik at vi kan legge inn vår egen nettside. I denne guiden kommer jeg til å opprette siden "testbuntu.net", men du må bytte ut "testbuntu.net" med ditt eget domenenavn.</p>
@@ -245,12 +248,33 @@
                     <p>I teorien kan man bruke nano-editoren til å legge inn HTML, men ettersom nano-editoren er kort sagt primitiv, kommer vi til å lage en separat HTML fil som vi legger inn på webserveren gjennom programmet FileZilla. Før du lager selve HTML-filen til nettsiden du vil hoste på webserveren burde man lage en enkel HTML fil som bare inneholder litt tekst, slikt at man får testet at alt faktisk fungerer.</p>
                 </div>
                 <div>
-                    <p>Gå til *insert link til Filezilla her* og last ned FileZilla. Etter å ha gjennomgått installasjonsprosessen vil FileZilla være klar til å brukes.</p>
+                    <p>Gå til <a href="https://filezilla-project.org/">FileZilla sin nettside</a> og last ned FileZilla ved å trykke på "Download FileZilla client". Etter å ha gjennomgått installasjonsprosessen vil FileZilla være klar til å brukes.</p>
                 </div>
                 <div>
-                    <p>Pass på at webserveren din er skrudd på når du bruker FileZilla, ellers vil du ikke få tilgang til filene til webserveren.<br>
-                    Først må vi logge inn på FileZilla med webserverbrukeren. Trykk på "connect" øverst til høyre, og ...</p>
-                    <!--This part requires me to actually do it when I have Filezilla and the webserver available.-->
+                    <p>Pass på at webserveren din er skrudd på når du bruker FileZilla, ellers kan du støte på problemer mens du prøver å få få tilgang til filene til webserveren.<br>
+                    Først må vi logge inn på FileZilla med webserverbrukeren. Trykk på "åpne tjeneroppsett" øverst til høyre.</p>
+                    <img src="img/401.png" alt="Bilde av forsiden til FileZilla" width="700px">
+                </div>
+                <div>
+                    <p>Aller først trykker du på "new site" for å opprette en ny side hos FileZilla. Her har jeg brukt webserveren som denne siden kjører på.<br>
+                    Velg "SFTP" i protokoll-menyen, og skriv inn IP-adressen til din webserver i "vert"-feltet. "Port"-feltet kan forbli tomt.<br>
+                    I feltene bruker og passord skriver du inn brukernavnet og passordet til webserveren din. Når alt er skrevet inn kan du trykke på "koble til".</p>
+                    <img src="img/402.jpg" alt="Bilde av innloggingsmenyen til FileZilla" width="700px">
+                </div>
+                <div>
+                    <p>Når du går tilbake til startmenyen vil FilaZilla prøve å koble seg til, som man kan se i en konsoll øverst. Hvis FileZilla klarer å koble til webserveren, vil du til slutt se mappestrukturen til webserveren nederst til høyre.</p>
+                    <img src="img/404.png" alt="Bilde av mappestrukturen til webserveren som sett gjennom FileZilla" width="700px">
+                </div>
+                <div>
+                    <p>Vi må finne fram til "var" mappen vi opprettet i forrige kapittel. Trykk på mappen øverst til venstre markert med "/", og gå ned hele veien til du finner "var" mappen.</p>
+                    <img src="img/405.png" alt="Bilde av mappestrukturen til webserveren som sett gjennom FileZilla" width="700px">
+                </div>
+                <div>
+                    <p>Gå inn i "www" mappen, så mappen med navnet til serveren din, og til slutt inn i "html" mappen. Her vil html-filen du opprettet i forrige kapittel ligge.</p>
+                    <img src="img/406.png" alt="Bilde av mappestrukturen til webserveren som sett gjennom FileZilla" width="700px">
+                </div>
+                <div>
+                    <p>Det er i denne html-mappen at vi legger inn filene som vi skal hoste på webserveren. I menyen til venstre vil du kunne se filsystemet til din egen PC, og derfra kan du dra filer fra egen maskin inn i webserveren.</p>
                 </div>
             </div>
         </div>
